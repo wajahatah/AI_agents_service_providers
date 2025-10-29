@@ -6,11 +6,12 @@ from sentence_transformers import SentenceTransformer, util
 # ==============================
 # CONFIGURATION
 # ==============================
-MODEL_PATH = "Qwen/Qwen3-0.6B"   # your downloaded model path or ID
+MODEL_PATH = "mistralai/Mistral-7B-Instruct-v0.2"#"ibm-granite/granite-4.0-micro"#"Qwen/Qwen3-0.6B"   # your downloaded model path or ID
 MAX_NEW_TOKENS = 1024
 TEMPERATURE = 0.7
 
 # Context (brief project description)
+title = "Beldray BEL0197"
 context = """
 The Beldray BEL0197 12 Stitch Sewing Machine is designed for both novice and
 experienced users seeking versatility and ease of use. It features a robust build with a
@@ -76,12 +77,13 @@ pipe = pipeline("text-generation", model=model, tokenizer=tokenizer)
 # RUN EVALUATION
 # ==============================
 results = []
+similarity_scores = []
 
 for qa in qa_data:
     q = qa["question"]
     expected = qa["expected_answer"]
     full_prompt = f"Context:\n{context}\n\nQuestion: {q}\nAnswer:"
-
+    print("ques:", q)
     try:
         output = pipe(full_prompt, max_new_tokens=MAX_NEW_TOKENS, temperature=TEMPERATURE)[0]["generated_text"]
         # Extract only the answer part
@@ -91,25 +93,58 @@ for qa in qa_data:
         answer = ""
 
     similarity = compare_answers(answer, expected)
-    results.append({
-        "question": q,
-        "expected_answer": expected,
-        "model_answer": answer,
-        "similarity_score": similarity
-    })
+    print("similarity", similarity)
+    similarity_scores.append(similarity)
+    # results.append({
+    #     "question": q,
+    #     "expected_answer": expected,
+    #     "model_answer": answer,
+    #     "similarity_score": similarity
+    # })
+    result_block = f"""
+    ==============================
+    Question ID: {qa["id"]}
+    Question: {q}
+
+    Expected Answer:
+    {expected}
+
+    Model Answer:
+    {answer}
+
+    Similarity Score: {similarity:.3f}
+    ==============================
+    """
+    results.append(result_block)
 
 # ==============================
 # SAVE RESULTS
 # ==============================
-df = pd.DataFrame(results)
+# df = pd.DataFrame(results)
 os.makedirs("results", exist_ok=True)
-csv_path = os.path.join("results", f"{MODEL_PATH.replace('/', '_')}_evaluation.csv")
-df.to_csv(csv_path, index=False)
+# title = f"{title} + {MODEL_PATH}"
+model = f"{MODEL_PATH.replace('/', '_')}"
+txt_path = os.path.join("results", f"{title}_{model}_evaluation.txt")
+# os.makedirs(txt_path, exist_ok=True)
 
-avg_score = df["similarity_score"].mean()
-print("\n======================")
-print(f"📊 Evaluation Summary for {MODEL_PATH}")
-print("======================")
-print(df[["question", "similarity_score"]])
-print(f"\nAverage similarity: {avg_score:.3f}")
-print(f"\n✅ Results saved at: {csv_path}")
+# csv_path = os.path.join("results", f"{MODEL_PATH.replace('/', '_')}_evaluation.csv")
+# df.to_csv(csv_path, index=False)
+
+# avg_score = df["similarity_score"].mean()
+# print("\n======================")
+# print(f"📊 Evaluation Summary for {MODEL_PATH}")
+# print("======================")
+# print(df[["question", "similarity_score"]])
+# print(f"\nAverage similarity: {avg_score:.3f}")
+# print(f"\n✅ Results saved at: {csv_path}")
+
+with open(txt_path, "w", encoding="utf-8") as f:
+    f.write(f"Evaluation Report for {MODEL_PATH}\n")
+    f.write("=" * 60 + "\n")
+    for block in results:
+        f.write(block)
+    f.write("=" * 60 + "\n")
+
+print(f"\n✅ Evaluation complete! Results saved at: {txt_path}")
+
+    
