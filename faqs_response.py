@@ -10,9 +10,11 @@ MODEL_PATH = "mistralai/Mistral-7B-Instruct-v0.2"#"ibm-granite/granite-4.0-micro
 MAX_NEW_TOKENS = 1024
 TEMPERATURE = 0.7
 
+pdf = "stiching"
+
 # Context (brief project description)
-title = "Beldray BEL0197"
-context = """
+Stiching_title = "stiching"
+stiching_context = """
 The Beldray BEL0197 12 Stitch Sewing Machine is designed for both novice and
 experienced users seeking versatility and ease of use. It features a robust build with a
 compact, portable design, making it ideal for sewing enthusiasts with limited space. The
@@ -36,7 +38,7 @@ excellent choice for anyone looking to explore sewing projects with ease and eff
 """
 
 # Questions and expected answers
-qa_data = [
+qa_data_stiching = [
     {
         "id": 1,
         "question": "How do I thread the Beldray BEL0197 sewing machine?",
@@ -189,6 +191,12 @@ pipe = pipeline("text-generation", model=model, tokenizer=tokenizer)
 # ==============================
 results = []
 similarity_scores = []
+
+
+qa_data = eval(f"qa_data_{pdf}")
+context = eval(f"{pdf}_context")
+title = pdf
+# print(qa_data)
 
 for qa in qa_data:
     q = qa["question"]
