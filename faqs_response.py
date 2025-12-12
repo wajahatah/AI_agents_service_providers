@@ -51,6 +51,117 @@ qa_data = [
         "id": 3,
         "question": "How can I adjust the tension on my sewing machine?",
         "expected_answer": "To adjust the tension, use the tension dial located on the front of the machine. For tighter tension, turn the dial to a higher number. For looser tension, turn it to a lower number. Always test on a scrap piece of fabric first."
+    },
+    {
+        "id": 4,
+        "question": "Why is the sewing machine making a loud noise?",
+        "expected_answer": "A loud noise may indicate that the machine needs cleaning or oiling. Check for any lint or thread caught in the bobbin area. If necessary, refer to the manual for instructions on how to lubricate the machine."
+    },
+    {
+        "id": 5,
+        "question": "How do I change the presser foot on the BEL0197?",
+        "expected_answer": "To change the presser foot, raise the needle and presser foot lever. Release the current foot by pressing the lever at the back of the foot holder. Position the new foot under the holder and lower the presser foot lever to snap it into place."
+    },
+    {
+        "id": 6,
+        "question": "What steps should I follow to clean the sewing machine?",
+        "expected_answer": "Turn off the machine and unplug it. Remove the needle, presser foot, and bobbin. Using a small brush, gently clean out any lint or dust from the bobbin area and feed dogs. Wipe the exterior with a soft cloth."
+    },
+    {
+        "id": 7,
+        "question": "How can I fix the bobbin winding issue?",
+        "expected_answer": "Ensure the bobbin is placed correctly on the winder spindle and that the thread is wrapped around the bobbin tension guide. Start the machine and make sure the bobbin is winding evenly. If not, check for any tangles or misalignment."
+    },
+    {
+        "id": 8,
+        "question": "Why does the fabric bunch up under the needle?",
+        "expected_answer": "Fabric bunching can result from incorrect tension settings or improper threading. Rethread the machine and check the tension dial settings. Also, ensure the needle is suitable for the fabric type."
+    },
+    {
+        "id": 9,
+        "question": "What causes the needle to break frequently?",
+        "expected_answer": "Frequent needle breaks can be caused by pulling the fabric too hard, using the wrong needle size, or hitting a pin. Use the correct needle for your fabric and avoid sewing over pins."
+    },
+    {
+        "id": 10,
+        "question": "How do I select different stitch patterns on the BEL0197?",
+        "expected_answer": "To select a stitch pattern, turn the stitch selector dial on the front of the machine. Align the desired stitch number with the indicator. Adjust the stitch length and width as needed for your project."
+    }
+]
+
+
+stove_title = "stove"
+stove_context = """
+The Beldray BA488430 Large Electric Stove With Flame Effects is a versatile heating
+appliance designed to combine functionality with aesthetic appeal. It features a robust
+design that mimics a traditional wood-burning stove, providing a cozy ambiance with its
+realistic flame effects. The unit operates using a sturdy electric heating element, which
+offers efficient heat output suitable for medium to large-sized rooms. This stove is
+equipped with adjustable heat settings, allowing users to easily control the temperature
+to their preference. A key feature is the independent flame effect, which can be used with
+or without heat, providing year-round ambiance. The stove is designed with a large
+viewing window, offering a clear and immersive view of the flame effects. Its construction
+includes durable materials, ensuring longevity and safety during operation. The
+appliance is equipped with overheat protection, automatically shutting off if it becomes
+too hot, enhancing safety for users. Installation is straightforward, requiring only a
+standard electrical outlet, making it convenient for various living spaces without the need
+for additional ventilation or chimney systems. The Beldray BA488430 is designed with
+user-friendly controls that are intuitive and easy to operate, ensuring a seamless
+experience. This electric stove not only serves as an efficient heating solution but also as
+an elegant focal point in any room, combining modern technology with classic design
+elements.
+"""
+
+qa_data_stove = [
+        {
+        "id": 1,
+        "question": "How do I assemble the Beldray BA488430 Large Electric Stove?",
+        "expected_answer": "To assemble the Beldray BA488430, follow the instructions provided in the user manual. Ensure all components are present and use the provided screws and tools for assembly. Secure each part firmly but avoid over-tightening."
+    },
+    {
+        "id": 2,
+        "question": "What should I do if the flame effects are not working?",
+        "expected_answer": "If the flame effects are not working, check the power supply and ensure the unit is plugged in and switched on. Inspect the bulb and replace it if necessary. Consult the manual for further troubleshooting steps or contact customer support."
+    },
+    {
+        "id": 3,
+        "question": "Can I use the heater function without the flame effects?",
+        "expected_answer": "Yes, the heater function can be used independently of the flame effects. Refer to the control panel instructions to activate the heater only mode."
+    },
+    {
+        "id": 4,
+        "question": "How do I clean and maintain the electric stove?",
+        "expected_answer": "To clean the stove, ensure it is turned off and unplugged. Use a soft, damp cloth to wipe the exterior and avoid abrasive cleaners. Regularly check and clean the air vents to ensure efficient operation."
+    },
+    {
+        "id": 5,
+        "question": "What is the recommended way to store the electric stove when not in use?",
+        "expected_answer": "Store the electric stove in a cool, dry place away from direct sunlight. Ensure it is unplugged and covered with a dust cover if possible to prevent dust accumulation."
+    },
+    {
+        "id": 6,
+        "question": "How can I improve the energy efficiency of the Beldray BA488430?",
+        "expected_answer": "To improve energy efficiency, use the thermostat to control the temperature and only use the heater when necessary. Keep the room insulated to retain warmth."
+    },
+    {
+        "id": 7,
+        "question":  "What is the maximum heating capacity of the Beldray BA488430?",
+        "expected_answer": "The Beldray BA488430 has a maximum heating capacity suitable for medium-sized rooms. Refer to the product specifications in the user manual for exact details."
+    },
+    {
+        "id": 8,
+        "question": "Is it safe to leave the electric stove unattended?",
+        "expected_answer": "While the stove has safety features, it is not advisable to leave it unattended for extended periods. Always ensure safety precautions are followed when in use."
+    },
+    {
+        "id": 9,
+        "question":  "What should I do if the stove overheats?",
+        "expected_answer": "If the stove overheats, it will automatically shut off. Allow it to cool down before resetting. Check for blockages in the vents and ensure the thermostat is working correctly."
+    },
+    {
+        "id": 10,
+        "question": "How can I replace the bulb for the flame effects?",
+        "expected_answer": "To replace the bulb, ensure the stove is turned off and unplugged. Access the bulb compartment as per the manual instructions, remove the old bulb, and insert a new one compatible with the stove's specifications."
     }
 ]
 
