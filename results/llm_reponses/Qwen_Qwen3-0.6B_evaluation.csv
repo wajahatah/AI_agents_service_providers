@@ -1,0 +1,18 @@
+question,expected_answer,model_answer,similarity_score
+How do I thread the Beldray BEL0197 sewing machine?,"To thread the machine, first raise the needle to its highest position. Place the spool of thread on the spool pin and guide the thread through the thread guide, down the tension dial, and into the needle. Ensure the thread is properly secured in the take-up lever",The Beldray BEL0197 sewing machine can be threaded using a thread cutter or a reverse sewing lever.,0.650774956
+What should I do if the stitches are skipping?,"Skipped stitches can be due to a dull or bent needle. Replace the needle with a new one, ensuring it is the correct type for your fabric. Also, check that the machine is threaded correctly.","A
+
+To answer this question, we need to identify the correct action to take when the stitches are skipping. The key information provided in the context is about the Beldray BEL0197 sewing machine. The machine is described as having a four-step buttonhole function, adjustable stitch length and width, a powerful motor, and a built-in LED light. 
+
+The question specifically asks what to do if the stitches are skipping. The answer choices are about using a stitch guide, replacing the needle, trying a different thread, or trying a different fabric. 
+
+Since the context mentions features like adjustable stitch length and width, it's implied that the user is using the machine to sew on fabric. A skipping stitch could be due to incorrect stitch length or width. However, the answer choices don't directly address the issue of adjusting the needle or thread. The correct action is to use a stitch guide to direct the needle, which is mentioned in option A. 
+
+Therefore, the answer should be",0.66375947
+How can I adjust the tension on my sewing machine?,"To adjust the tension, use the tension dial located on the front of the machine. For tighter tension, turn the dial to a higher number. For looser tension, turn it to a lower number. Always test on a scrap piece of fabric first.","To adjust the tension on your sewing machine, locate the dial at the front. This dial is typically labeled with numbers 1 to 12, corresponding to different tension settings. Turning the dial allows you to adjust the tension to suit your needs and fabric type. If you have any questions, feel free to ask. 
+
+**Step-by-Step Explanation:**
+1. Identify the tension dial on the front of the machine.
+2. Locate the dial labeled with numbers 1 to 12.
+3. Adjust the dial to your desired tension setting.
+4. The numbers correspond to different tension levels, allowing you to balance sewing performance with",0.879055738
